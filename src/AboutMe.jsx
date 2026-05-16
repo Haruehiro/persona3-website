@@ -590,12 +590,8 @@ export default function AboutMe() {
           <div
             key={item.id}
             className={`sc-bar-outer${active === i ? " active" : ""}${mounted ? " mounted" : ""}`}
-            onClick={() => {
-              setActive(i);
-            }}
-            onMouseEnter={() => {
-              setActive(i);
-            }}
+            onClick={() => { setActive(i); setRevealed(true); }}
+            onMouseEnter={() => { setActive(i); }}
           >
             <div className="sc-bar-red" />
             <div className="sc-bar">

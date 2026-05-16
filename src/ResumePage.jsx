@@ -263,13 +263,19 @@ export default function ResumePage({ src }) {
           width: min(39vw, 620px);
           max-height: 80vh;
           z-index: 12;
-          padding: 22px 24px 24px 24px;
           background: linear-gradient(180deg, rgba(15, 28, 105, 0.96) 0%, rgba(8, 16, 68, 0.97) 100%);
           clip-path: polygon(0 0, 100% 0, calc(100% - 18px) 100%, 0 100%);
           box-shadow:
             inset 0 0 0 1px rgba(133, 244, 255, 0.16),
             16px 16px 0 rgba(0, 6, 30, 0.55);
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+        }
+        .resume-detail-scroll {
           overflow-y: auto;
+          flex: 1;
+          padding: 0 24px 24px 24px;
           scrollbar-width: thin;
           scrollbar-color: rgba(133, 244, 255, 0.3) transparent;
         }
@@ -427,22 +433,24 @@ export default function ResumePage({ src }) {
               <div className="resume-detail-top-title">SKILL TREE</div>
               <div className="resume-detail-top-progress">MAX</div>
             </div>
-            <div className="resume-detail-list">
-              {SKILLS_ROWS.map((row) => (
-                <div className="resume-detail-row" key={row.index}>
-                  <div className="resume-detail-row-index">{row.index}</div>
-                  <div className="resume-detail-row-title">{row.title}</div>
-                  <div className="resume-detail-status">{row.status}</div>
+            <div className="resume-detail-scroll">
+              <div className="resume-detail-list">
+                {SKILLS_ROWS.map((row) => (
+                  <div className="resume-detail-row" key={row.index}>
+                    <div className="resume-detail-row-index">{row.index}</div>
+                    <div className="resume-detail-row-title">{row.title}</div>
+                    <div className="resume-detail-status">{row.status}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="resume-detail-bottom">
+                <div className="resume-detail-bottom-title">TOOLS</div>
+                <div className="resume-detail-bullets">
+                  <div className="resume-detail-bullet">- H100 · H200 · B200 · GB200/300 · MI300x · PCIe · HGX</div>
+                  <div className="resume-detail-bullet">- Chef · Ansible · GitHub Actions · CI/CD · SLURM</div>
+                  <div className="resume-detail-bullet">- Claude Code · Gemini · Codex · Custom AI Agents</div>
+                  <div className="resume-detail-bullet">- AWS EC2/VPC/EBS · Linux · IPMI · BMC · PXE · Networking</div>
                 </div>
-              ))}
-            </div>
-            <div className="resume-detail-bottom">
-              <div className="resume-detail-bottom-title">TOOLS</div>
-              <div className="resume-detail-bullets">
-                <div className="resume-detail-bullet">- H100 · H200 · B200 · GB200/300 · MI300x · PCIe · HGX</div>
-                <div className="resume-detail-bullet">- Chef · Ansible · GitHub Actions · CI/CD · SLURM</div>
-                <div className="resume-detail-bullet">- Claude Code · Gemini · Codex · Custom AI Agents</div>
-                <div className="resume-detail-bullet">- AWS EC2/VPC/EBS · Linux · IPMI · BMC · PXE · Networking</div>
               </div>
             </div>
           </div>
@@ -455,22 +463,24 @@ export default function ResumePage({ src }) {
               <div className="resume-detail-top-title">WORK HISTORY</div>
               <div className="resume-detail-top-progress">6+yr</div>
             </div>
-            <div className="resume-detail-list">
-              {EXPERIENCE_ROWS.map((row) => (
-                <div className="resume-detail-row" key={row.index}>
-                  <div className="resume-detail-row-index">{row.index}</div>
-                  <div className="resume-detail-row-title">{row.title}</div>
-                  <div className="resume-detail-status">{row.status}</div>
+            <div className="resume-detail-scroll">
+              <div className="resume-detail-list">
+                {EXPERIENCE_ROWS.map((row) => (
+                  <div className="resume-detail-row" key={row.index}>
+                    <div className="resume-detail-row-index">{row.index}</div>
+                    <div className="resume-detail-row-title">{row.title}</div>
+                    <div className="resume-detail-status">{row.status}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="resume-detail-bottom">
+                <div className="resume-detail-bottom-title">META HIGHLIGHTS</div>
+                <div className="resume-detail-bullets">
+                  <div className="resume-detail-bullet">- Operate tens of thousands of GPUs across global data centers</div>
+                  <div className="resume-detail-bullet">- Blackwell GB200/300 · H100/H200 · NVLink/NVSwitch · MI300x</div>
+                  <div className="resume-detail-bullet">- MTTR reduced from 4 hours to 45 minutes on GPU incidents</div>
+                  <div className="resume-detail-bullet">- Led hardware triage for 1M+ servers at under 2 day SLA</div>
                 </div>
-              ))}
-            </div>
-            <div className="resume-detail-bottom">
-              <div className="resume-detail-bottom-title">META HIGHLIGHTS</div>
-              <div className="resume-detail-bullets">
-                <div className="resume-detail-bullet">- Operate tens of thousands of GPUs across global data centers</div>
-                <div className="resume-detail-bullet">- Blackwell GB200/300 · H100/H200 · NVLink/NVSwitch · MI300x</div>
-                <div className="resume-detail-bullet">- MTTR reduced from 4 hours to 45 minutes on GPU incidents</div>
-                <div className="resume-detail-bullet">- Led hardware triage for 1M+ servers at under 2 day SLA</div>
               </div>
             </div>
           </div>
@@ -483,22 +493,24 @@ export default function ResumePage({ src }) {
               <div className="resume-detail-top-title">PROJECTS</div>
               <div className="resume-detail-top-progress">Live</div>
             </div>
-            <div className="resume-detail-list">
-              {PROJECTS_ROWS.map((row) => (
-                <div className="resume-detail-row" key={row.index}>
-                  <div className="resume-detail-row-index">{row.index}</div>
-                  <div className="resume-detail-row-title">{row.title}</div>
-                  <div className="resume-detail-status">{row.status}</div>
+            <div className="resume-detail-scroll">
+              <div className="resume-detail-list">
+                {PROJECTS_ROWS.map((row) => (
+                  <div className="resume-detail-row" key={row.index}>
+                    <div className="resume-detail-row-index">{row.index}</div>
+                    <div className="resume-detail-row-title">{row.title}</div>
+                    <div className="resume-detail-status">{row.status}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="resume-detail-bottom">
+                <div className="resume-detail-bottom-title">FLEET OBSERVABILITY</div>
+                <div className="resume-detail-bullets">
+                  <div className="resume-detail-bullet">- Built as a personal initiative — now primary ops tool at Meta</div>
+                  <div className="resume-detail-bullet">- Adopted by 240+ engineers across 17 teams org-wide</div>
+                  <div className="resume-detail-bullet">- Real-time host/rack status · dynamic alert prioritization</div>
+                  <div className="resume-detail-bullet">- Auto-triages 1–2 cross-functional incidents per week</div>
                 </div>
-              ))}
-            </div>
-            <div className="resume-detail-bottom">
-              <div className="resume-detail-bottom-title">FLEET OBSERVABILITY</div>
-              <div className="resume-detail-bullets">
-                <div className="resume-detail-bullet">- Built as a personal initiative — now primary ops tool at Meta</div>
-                <div className="resume-detail-bullet">- Adopted by 240+ engineers across 17 teams org-wide</div>
-                <div className="resume-detail-bullet">- Real-time host/rack status · dynamic alert prioritization</div>
-                <div className="resume-detail-bullet">- Auto-triages 1–2 cross-functional incidents per week</div>
               </div>
             </div>
           </div>

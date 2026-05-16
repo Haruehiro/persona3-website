@@ -520,10 +520,7 @@ export default function Socials() {
           <div
             key={item.id}
             className={`sc-bar-outer${active === i ? " active" : ""}${mounted ? " mounted" : ""}`}
-            onClick={() => {
-              if (active === i) window.open(item.href, "_blank");
-              else setActive(i);
-            }}
+            onClick={() => window.open(item.href, "_blank")}
             onMouseEnter={() => setActive(i)}
           >
             <div className="sc-bar-red" />
