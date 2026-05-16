@@ -15,10 +15,12 @@ const SKILLS_ROWS = [
 ];
 
 const EXPERIENCE_ROWS = [
-  { index: "01", title: "META — INFRA PROD ENG",    status: "Current" },
-  { index: "02", title: "AWS — SECURITY ENGINEER",  status: "2023–24" },
-  { index: "03", title: "AWS — SYSTEM DEV ENG",     status: "2021–23" },
-  { index: "04", title: "HIVELOCITY — SR SYS ADMIN",status: "2020–21" },
+  { index: "01", title: "META — INFRA PROD ENG",       status: "Current" },
+  { index: "02", title: "AWS — SECURITY ENGINEER",     status: "2023–24" },
+  { index: "03", title: "AWS — SYSTEM DEV ENG",        status: "2021–23" },
+  { index: "04", title: "HIVELOCITY — SR SYS ADMIN",   status: "2020–21" },
+  { index: "05", title: "NINJAONE — TECH SUPPORT ENG", status: "2019" },
+  { index: "06", title: "PINELLAS — JR SYS ADMIN",     status: "2016–19" },
 ];
 
 const PROJECTS_ROWS = [
@@ -259,7 +261,7 @@ export default function ResumePage({ src }) {
           top: 9.5vh;
           right: 4.5vw;
           width: min(39vw, 620px);
-          min-height: 74vh;
+          max-height: 80vh;
           z-index: 12;
           padding: 22px 24px 24px 24px;
           background: linear-gradient(180deg, rgba(15, 28, 105, 0.96) 0%, rgba(8, 16, 68, 0.97) 100%);
@@ -267,7 +269,9 @@ export default function ResumePage({ src }) {
           box-shadow:
             inset 0 0 0 1px rgba(133, 244, 255, 0.16),
             16px 16px 0 rgba(0, 6, 30, 0.55);
-          overflow: hidden;
+          overflow-y: auto;
+          scrollbar-width: thin;
+          scrollbar-color: rgba(133, 244, 255, 0.3) transparent;
         }
         .resume-detail-panel::before {
           content: "";
