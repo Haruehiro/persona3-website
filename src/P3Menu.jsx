@@ -193,7 +193,7 @@ export default function P3Menu({ onNavigate }) {
         .p3-name-tag {
           position: absolute;
           top: 18px;
-          left: 22px;
+          left: 48px;
           z-index: 20;
           font-family: 'Anton', sans-serif;
           font-style: italic;
@@ -216,7 +216,7 @@ export default function P3Menu({ onNavigate }) {
 
       <div className="p3-overlay">
         <div className="p3-name-tag">
-          <span>jade's</span>
+          <span>haru's</span>
           <span>persona</span>
         </div>
         <div className="p3-stripe" />
