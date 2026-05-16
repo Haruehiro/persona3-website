@@ -19,11 +19,10 @@ const ROLES = [
 
 const ITEMS = [
   {
-    id: "twitch", label: "TWITCH", handle: "@yourname", href: "https://twitch.tv/yourname", icon: "🎮", barIcon: icon1, bars: 1, newBars: [0], counts: ["56"],
-    links: ["twitch.tv/videos/2041837265"],
+    id: "linkedin", label: "LINKEDIN", handle: "@douglasvkim", href: "https://www.linkedin.com/in/douglasvkim/", icon: "💼", barIcon: icon1, bars: 1, newBars: [0], counts: [""],
+    links: ["www.linkedin.com/in/douglasvkim/"],
     stats: [
-      { tag: "FOL", value: "1.2K", color: "#9147ff" },
-      { tag: "VWR", value: "042",  color: "#bf94ff" },
+      { tag: "NET", value: "500+", color: "#0a66c2" },
     ],
   },
   {
