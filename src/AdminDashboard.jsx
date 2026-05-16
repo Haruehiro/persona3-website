@@ -107,7 +107,7 @@ export default function AdminDashboard() {
     return d.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" }).toUpperCase();
   };
 
-  if (!authChecked) return null;
+  if (!authChecked) return <div style={{ minHeight: "100vh", background: "#000" }} />;
   if (!user) return <AdminLogin onLogin={(u) => setUser(u)} />;
 
   return (
