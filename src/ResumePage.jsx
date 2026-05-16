@@ -271,6 +271,7 @@ export default function ResumePage({ src }) {
           overflow: hidden;
           display: flex;
           flex-direction: column;
+          pointer-events: all;
         }
         .resume-detail-scroll {
           overflow-y: auto;
