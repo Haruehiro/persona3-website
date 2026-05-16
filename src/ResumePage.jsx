@@ -446,10 +446,10 @@ export default function ResumePage({ src }) {
               <div className="resume-detail-bottom">
                 <div className="resume-detail-bottom-title">TOOLS</div>
                 <div className="resume-detail-bullets">
-                  <div className="resume-detail-bullet">- H100 · H200 · B200 · GB200/300 · MI300x · PCIe · HGX</div>
-                  <div className="resume-detail-bullet">- Chef · Ansible · GitHub Actions · CI/CD · SLURM</div>
-                  <div className="resume-detail-bullet">- Claude Code · Gemini · Codex · Custom AI Agents</div>
-                  <div className="resume-detail-bullet">- AWS EC2/VPC/EBS · Linux · IPMI · BMC · PXE · Networking</div>
+                  <div className="resume-detail-bullet">- nvidia-smi · DCGM · FieldDiag · lspci · IPMI · BMC · PXE</div>
+                  <div className="resume-detail-bullet">- Chef · Ansible · GitHub Actions · CI/CD · SLURM · TypeScript</div>
+                  <div className="resume-detail-bullet">- Claude Code · Gemini · Codex · Custom Agents · Workflow Automation</div>
+                  <div className="resume-detail-bullet">- AWS EC2/VPC/EBS/ELB · CloudWatch · Systems Manager · Redshift</div>
                 </div>
               </div>
             </div>
@@ -506,7 +506,7 @@ export default function ResumePage({ src }) {
               <div className="resume-detail-bottom">
                 <div className="resume-detail-bottom-title">FLEET OBSERVABILITY</div>
                 <div className="resume-detail-bullets">
-                  <div className="resume-detail-bullet">- Built as a personal initiative — now primary ops tool at Meta</div>
+                  <div className="resume-detail-bullet">- Built as a personal initiative — now the primary ops tool</div>
                   <div className="resume-detail-bullet">- Adopted by 240+ engineers across 17 teams org-wide</div>
                   <div className="resume-detail-bullet">- Real-time host/rack status · dynamic alert prioritization</div>
                   <div className="resume-detail-bullet">- Auto-triages 1–2 cross-functional incidents per week</div>
