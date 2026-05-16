@@ -14,14 +14,16 @@ const MAIN_IMAGES = [mainm, mainm2];
 const REVEAL_CONTENT = [
   {
     upper: [
-      "I'm a Systems Engineer based in Dallas, TX with a background in hyperscale AI infrastructure at Meta and AWS. I've spent the last few years managing hundreds of thousands of GPUs across global data centers — working with next-gen NVIDIA Blackwell hardware, NVLink/NVSwitch fabric, and building tooling that's now used org-wide across 17 teams. I like finding problems nobody's solved yet and building something that sticks.",
-      "Outside of work I'm a photographer chasing the kind of shot that makes someone stop scrolling. Mostly cars, cosplay, people — I'm drawn to the stories you find when you get close enough and look at things from the right angle. DFW has no shortage of beautiful machines and interesting people, so I stay busy.",
+      "Systems Engineer — Dallas, TX",
+      "Hyperscale AI infrastructure at Meta and AWS",
+      "Managed 100K+ GPUs across global data centers",
     ],
-    lower: "systems engineer · photographer",
+    lower: "photographer — cars, cosplay, people",
   },
   {
     upper: [
-      "I've mastered the Fortnite default dance and you'll find me doing that in the back corner of any rave.",
+      "I've mastered the Fortnite default dance.",
+      "You will find me doing it in the back corner of any rave.",
     ],
     lower: "no further questions",
   },
@@ -201,7 +203,7 @@ export default function AboutMe() {
           top: 44vh;
           left: -6vw;
           width: 88vw;
-          height: 74vh;
+          height: 60vh;
           z-index: 12;
           pointer-events: none;
           background:
@@ -233,39 +235,34 @@ export default function AboutMe() {
         }
         .sc-reveal-upper-bar {
           position: absolute;
-          top: 8%;
+          top: 10%;
           left: 0%;
           width: 100%;
-          height: 62%;
+          height: 40%;
           background: rgba(0, 0, 0, 0.92);
           clip-path: polygon(0 0, 100% 0, calc(100% - 22px) 100%, 0 100%);
           box-shadow: 0 0 0 1px rgba(255,255,255,0.06);
           display: flex;
           flex-direction: column;
-          align-items: flex-start;
-          justify-content: flex-start;
-          gap: 18px;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
           color: #fff;
-          text-align: left;
-          padding: 24px 48px 24px 32px;
-          overflow-y: auto;
-          scrollbar-width: thin;
-          scrollbar-color: rgba(255,255,255,0.15) transparent;
-          box-sizing: border-box;
+          text-align: center;
         }
         .sc-reveal-upper-line {
           font-family: 'Montserrat', sans-serif;
           font-weight: 300;
-          font-size: 15px;
-          letter-spacing: 0.3px;
-          line-height: 1.7;
+          font-size: 20px;
+          letter-spacing: 0.5px;
+          line-height: 1.15;
         }
         .sc-reveal-lower-bar {
           position: absolute;
-          top: 76%;
+          top: 58%;
           right: 0;
           width: 48%;
-          height: 14%;
+          height: 20%;
           background: rgba(0, 0, 0, 0.92);
           clip-path: polygon(0 0, 100% 0, calc(100% - 22px) 100%, 0 100%);
           box-shadow: 0 0 0 1px rgba(255,255,255,0.06);
