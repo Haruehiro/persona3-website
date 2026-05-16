@@ -2,17 +2,29 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const ITEMS = [
-  { id: "i", badge: "I", title: "EDUCATION", subtitle: "University / Coursework", rank: 3 },
-  { id: "ii", badge: "II", title: "SKILLS", subtitle: "Frontend / Design / UI", rank: 4 },
-  { id: "iii", badge: "III", title: "PROJECTS", subtitle: "Featured Work", rank: 5 },
-  { id: "iv", badge: "IV", title: "EXPERIENCE", subtitle: "Internships / Roles", rank: 2 },
+  { id: "skills",     badge: "I",   title: "SKILLS",     subtitle: "Hardware · Software · Cloud", rank: 5 },
+  { id: "experience", badge: "II",  title: "EXPERIENCE", subtitle: "Meta · AWS · More",           rank: 4 },
+  { id: "projects",   badge: "III", title: "PROJECTS",   subtitle: "AI Observability Platform",   rank: 3 },
 ];
 
-const EDUCATION_ROWS = [
-  { index: "01", title: "General Education", status: "Complete" },
-  { index: "02", title: "Computer Science Core", status: "In Progress" },
-  { index: "03", title: "Elective Track", status: "Queued" },
-  { index: "04", title: "Capstone Prep", status: "Pending" },
+const SKILLS_ROWS = [
+  { index: "01", title: "AI / GPU INFRASTRUCTURE", status: "Expert" },
+  { index: "02", title: "SOFTWARE & AUTOMATION",   status: "Expert" },
+  { index: "03", title: "AI TOOLS & AGENTS",       status: "Active" },
+  { index: "04", title: "CLOUD & CORE SYSTEMS",    status: "Expert" },
+];
+
+const EXPERIENCE_ROWS = [
+  { index: "01", title: "META — INFRA PROD ENG",    status: "Current" },
+  { index: "02", title: "AWS — SECURITY ENGINEER",  status: "2023–24" },
+  { index: "03", title: "AWS — SYSTEM DEV ENG",     status: "2021–23" },
+  { index: "04", title: "HIVELOCITY — SR SYS ADMIN",status: "2020–21" },
+];
+
+const PROJECTS_ROWS = [
+  { index: "01", title: "AI FLEET OBSERVABILITY PLATFORM", status: "Shipped" },
+  { index: "02", title: "AWS CERTIFIED SYSOPS ADMIN",      status: "Certified" },
+  { index: "03", title: "LPIC-1 LINUX ADMINISTRATOR",      status: "Certified" },
 ];
 
 export default function ResumePage({ src }) {
@@ -407,13 +419,12 @@ export default function ResumePage({ src }) {
         {active === 0 && (
           <div className="resume-detail-panel">
             <div className="resume-detail-top">
-              <div className="resume-detail-top-index">01</div>
-              <div className="resume-detail-top-title">EDUCATION LOG</div>
-              <div className="resume-detail-top-progress">7/5</div>
+              <div className="resume-detail-top-index">I</div>
+              <div className="resume-detail-top-title">SKILL TREE</div>
+              <div className="resume-detail-top-progress">MAX</div>
             </div>
-
             <div className="resume-detail-list">
-              {EDUCATION_ROWS.map((row) => (
+              {SKILLS_ROWS.map((row) => (
                 <div className="resume-detail-row" key={row.index}>
                   <div className="resume-detail-row-index">{row.index}</div>
                   <div className="resume-detail-row-title">{row.title}</div>
@@ -421,13 +432,69 @@ export default function ResumePage({ src }) {
                 </div>
               ))}
             </div>
-
             <div className="resume-detail-bottom">
-              <div className="resume-detail-bottom-title">DETAILS</div>
+              <div className="resume-detail-bottom-title">TOOLS</div>
               <div className="resume-detail-bullets">
-                <div className="resume-detail-bullet">- Maintain progress across required classes and supporting work.</div>
-                <div className="resume-detail-bullet">- Track portfolio-ready projects tied to coursework and labs.</div>
-                <div className="resume-detail-bullet">- Keep materials prepared for internships, research, and review.</div>
+                <div className="resume-detail-bullet">- H100 · H200 · B200 · GB200/300 · MI300x · PCIe · HGX</div>
+                <div className="resume-detail-bullet">- Chef · Ansible · GitHub Actions · CI/CD · SLURM</div>
+                <div className="resume-detail-bullet">- Claude Code · Gemini · Codex · Custom AI Agents</div>
+                <div className="resume-detail-bullet">- AWS EC2/VPC/EBS · Linux · IPMI · BMC · PXE · Networking</div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {active === 1 && (
+          <div className="resume-detail-panel">
+            <div className="resume-detail-top">
+              <div className="resume-detail-top-index">II</div>
+              <div className="resume-detail-top-title">WORK HISTORY</div>
+              <div className="resume-detail-top-progress">6+yr</div>
+            </div>
+            <div className="resume-detail-list">
+              {EXPERIENCE_ROWS.map((row) => (
+                <div className="resume-detail-row" key={row.index}>
+                  <div className="resume-detail-row-index">{row.index}</div>
+                  <div className="resume-detail-row-title">{row.title}</div>
+                  <div className="resume-detail-status">{row.status}</div>
+                </div>
+              ))}
+            </div>
+            <div className="resume-detail-bottom">
+              <div className="resume-detail-bottom-title">META HIGHLIGHTS</div>
+              <div className="resume-detail-bullets">
+                <div className="resume-detail-bullet">- Operate tens of thousands of GPUs across global data centers</div>
+                <div className="resume-detail-bullet">- Blackwell GB200/300 · H100/H200 · NVLink/NVSwitch · MI300x</div>
+                <div className="resume-detail-bullet">- MTTR reduced from 4 hours to 45 minutes on GPU incidents</div>
+                <div className="resume-detail-bullet">- Led hardware triage for 1M+ servers at under 2 day SLA</div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {active === 2 && (
+          <div className="resume-detail-panel">
+            <div className="resume-detail-top">
+              <div className="resume-detail-top-index">III</div>
+              <div className="resume-detail-top-title">PROJECTS</div>
+              <div className="resume-detail-top-progress">Live</div>
+            </div>
+            <div className="resume-detail-list">
+              {PROJECTS_ROWS.map((row) => (
+                <div className="resume-detail-row" key={row.index}>
+                  <div className="resume-detail-row-index">{row.index}</div>
+                  <div className="resume-detail-row-title">{row.title}</div>
+                  <div className="resume-detail-status">{row.status}</div>
+                </div>
+              ))}
+            </div>
+            <div className="resume-detail-bottom">
+              <div className="resume-detail-bottom-title">FLEET OBSERVABILITY</div>
+              <div className="resume-detail-bullets">
+                <div className="resume-detail-bullet">- Built as a personal initiative — now primary ops tool at Meta</div>
+                <div className="resume-detail-bullet">- Adopted by 240+ engineers across 17 teams org-wide</div>
+                <div className="resume-detail-bullet">- Real-time host/rack status · dynamic alert prioritization</div>
+                <div className="resume-detail-bullet">- Auto-triages 1–2 cross-functional incidents per week</div>
               </div>
             </div>
           </div>
